@@ -5,6 +5,7 @@ provider "google" {
   region      = "${var.region}"
 }
 
+
 resource "google_compute_instance" "ptfe" {
   name         = "${var.environment_name}"
   machine_type = "n1-standard-2"
@@ -37,7 +38,7 @@ resource "google_compute_instance" "ptfe" {
   }
 }
 resource "google_compute_firewall" "default" {
-  name    = "ptfefirewall"
+  name    = "${var.environment_name}-ptfefirewall"
   network = "${google_compute_network.main.id}"
   allow {
     protocol = "icmp"

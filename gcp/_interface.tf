@@ -1,9 +1,4 @@
-
 variable "environment_name" {
-  type = "string"
-}
-
-variable "os" {
   type = "string"
 }
 
@@ -12,10 +7,6 @@ variable "project" {
 }
 
 variable "image" {
-  type = "string"
-}
-
-variable "network" {
   type = "string"
 }
 
@@ -47,4 +38,5 @@ variable "vpc_cidr" {
 output "ptfe_public_ips" {
   value = "${google_compute_instance.ptfe.*.network_interface.0.access_config.0.assigned_nat_ip}"
 }
+
 
