@@ -20,7 +20,7 @@ resource "google_compute_instance" "ptfe" {
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-1604-xenial-v20180306"
+      image = "${var.image}"
       size = "80"
     }
   }
