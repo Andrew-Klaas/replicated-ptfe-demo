@@ -69,7 +69,7 @@ resource "aws_subnet" "subnet" {
     Name = "${var.service_name}-subnet"
   }
 
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = false
 }
 
 resource "aws_route_table_association" "subnet" {
